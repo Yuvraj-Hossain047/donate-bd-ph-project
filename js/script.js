@@ -1,8 +1,30 @@
 // Utilities====================================
-function getValue(id){
+function getInnerText(id){
     const x = document.getElementById(id).innerText;
     const y = parseFloat(x);
     return y;
+}
+function getValue(id){
+    const p = document.getElementById(id).value;
+    const q = parseFloat(p);
+    return q;
+}
+function donateCalculator (balance, willDonate, donated, fundName){
+    const a = getInnerText(balance);
+    const b = getValue(willDonate);
+    const c = getInnerText(donated);
+    if(a>=b){
+        let d =a-b;
+        let e = c + b;
+        document.getElementById(balance).innerText = d;
+        document.getElementById(donated).innerText=e;
+        const p = document.createElement('p');
+        p.innerText = `Donated: ${b}TK. Current Balance: ${d}TK. to ${fundName}.`;
+        document.getElementById('history-list').appendChild(p);
+    }
+    else{
+        alert('FAILED')
+    }
 }
 // Navbar BUTTONs===============================
 document.getElementById('history-btn')
@@ -26,66 +48,15 @@ document.getElementById('donation-btn')
 // Donate Noakhali Flood=========================
 document.getElementById('nflood')
         .addEventListener('click', function(){
-            const donateBalance = document.getElementById('nd-amount').value;
-            const a = getValue('m-balance');
-            const b = parseFloat(donateBalance);
-            const c = getValue('n-taka');
-
-            if(a>=b){
-                let d =a-b;
-                let e = c + b;
-                document.getElementById('m-balance').innerText = d;
-                document.getElementById('n-taka').innerText=e;
-
-                const p = document.createElement('p');
-                p.innerText = `Donated: ${b}TK. to Flood at Noakhali. Balance Remains: ${d}`;
-                document.getElementById('history-list').appendChild(p);
-            }
-            else{
-                alert('FAILED')
-            }
+            donateCalculator('m-balance','nd-amount','n-taka','Flood at Noakhali');
         })
 // Donate Feni Flood==============================
 document.getElementById('fflood')
         .addEventListener('click', function(){
-            const donateBalance = document.getElementById('fd-amount').value;
-            const a = getValue('m-balance');
-            const b = parseFloat(donateBalance);
-            const c = getValue('f-taka');
-
-            if(a>=b){
-                let d =a-b;
-                let e = c + b;
-                document.getElementById('m-balance').innerText = d;
-                document.getElementById('f-taka').innerText=e;
-
-                const p = document.createElement('p');
-                p.innerText = `Donated: ${b}TK. to Flood at Feni. Balance Remains: ${d}`;
-                document.getElementById('history-list').appendChild(p);
-            }
-            else{
-                alert('FAILED')
-            }
+            donateCalculator('m-balance','fd-amount','f-taka','Flood at Feni');
         })
 // Donate Quota Movement==========================
 document.getElementById('qu-pro')
         .addEventListener('click', function(){
-            const donateBalance = document.getElementById('qd-amount').value;
-            const a = getValue('m-balance');
-            const b = parseFloat(donateBalance);
-            const c = getvalue('q-taka');
-
-            if(a>=b){
-                let d =a-b;
-                let e = c + b;
-                document.getElementById('m-balance').innerText = d;
-                document.getElementById('q-taka').innerText=e;
-
-                const p = document.createElement('p');
-                p.innerText = `Donated: ${b}TK. to Aid for Injured in the Quota Movement. Balance Remains: ${d}`;
-                document.getElementById('history-list').appendChild(p);
-            }
-            else{
-                alert('FAILED')
-            }
+            donateCalculator('m-balance','qd-amount','q-taka','Aid for Injured in the Quota Movement');
         })

@@ -78,6 +78,7 @@ body{
 .history p{
     background: rgb(180, 244, 97);
     margin-bottom: 10px;
+    padding: 8px 8px;
 }
 footer{
     height: 146px;
