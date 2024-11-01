@@ -13,7 +13,7 @@ function donateCalculator (balance, willDonate, donated, fundName){
     const a = getInnerText(balance);
     const b = getValue(willDonate);
     const c = getInnerText(donated);
-    if(a>=b){
+    if(a>=b && b>0){
         let d =a-b;
         let e = c + b;
         document.getElementById(balance).innerText = d;
