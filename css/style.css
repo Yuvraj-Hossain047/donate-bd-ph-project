@@ -36,7 +36,7 @@ body{
     line-height: 25px;
 }
 .btn-2{
-    padding: 16px 32px 16px 32px;
+    padding: 16px 32px;
     border: 1px solid rgba(17, 17, 17, 0.3);
     border-radius: 8px;
     color: rgba(17, 17, 17, 0.7);
