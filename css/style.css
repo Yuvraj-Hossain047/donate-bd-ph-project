@@ -133,3 +133,9 @@ footer{
     height: 146px;
     background: rgb(249, 247, 243);
 }
+/* ================Blog page=============== */
+.blog-question div{
+    background: rgb(180, 244, 97);
+    padding: 15px;
+    margin: 15px 0;
+}
